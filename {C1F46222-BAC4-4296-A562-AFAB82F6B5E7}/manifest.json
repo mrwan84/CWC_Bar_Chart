@@ -1,0 +1,78 @@
+{
+  "mver": "1.2.0",
+  "control": {
+    "identity": {
+      "name": "Bar_Chart",
+      "version": "1.0",
+      "displayname": "Bar_Chart",
+      "icon": "./assets/logo.ico",
+      "type": "guid://C1F46222-BAC4-4296-A562-AFAB82F6B5E7",
+      "start": "./control/index.html"
+    },
+    "metadata": {
+      "author": "M.alsouki",
+      "keywords": []
+    },
+    "environment": {
+      "prerequisites": {
+        "renderingspace": {
+          "defaultwidth": 600,
+          "defaultheight": 400,
+          "unit": "px"
+        }
+      }
+    },
+    "contracts": {
+      "api": {
+        "methods": {},
+        "events": {},
+        "properties": {
+          "ChartTitle": {
+            "type": "string",
+            "default": "Automation Set"
+          },
+          "ChartData": {
+            "$ref": "#/control/types/ChartData"
+          }
+        }
+      }
+    },
+    "types": {
+      "ChartData": {
+        "type": "array",
+        "items": {
+          "$ref": "#/control/types/row"
+        }
+      },
+      "row": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "default": 0
+          },
+          "label": {
+            "type": "string",
+            "default": "label"
+          },
+          "BackgroundColor": {
+            "$ref": "#/control/types/Color",
+            "default": 184549375
+          },
+          "BorderColor": {
+            "$ref": "#/control/types/Color",
+            "default": 184549375
+          },
+          "BorderWidth": {
+            "type": "number",
+            "default": 0
+          }
+        }
+      },
+      "Color": {
+        "$id": "http://tia.siemens.com/wincc-unified/types/s/color",
+        "type": "number"
+      }
+    }
+  }
+}
